@@ -1,7 +1,9 @@
 import { Card,  CardContent, Typography } from "@mui/material";
+import "./SearchBar"
 
 
-export default function Forecast () {
+export default function Forecast (props) {
+    const {SearchBar} = props
 // TODO: Get forecast data from API
 
     return(

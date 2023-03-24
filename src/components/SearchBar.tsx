@@ -1,5 +1,6 @@
 import { TextField } from "@mui/material";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import "./SearchBar.css";
 
 export default function SearchBar() {
   const [location, setLocation] = useState("");
@@ -14,7 +15,8 @@ export default function SearchBar() {
     // Call weather API with location
 
     const headers = new Headers({
-      "X-RapidAPI-Key": process.env.REACT_APP_API_KEY || "",
+      "X-RapidAPI-Key": "f17dc09e98msh79cb8c9f15f9611p1a528djsn577dcf279701" || "",
+      // "X-RapidAPI-Key": process.env.REACT_APP_API_KEY || "",
       "X-RapidAPI-Host": "yahoo-weather5.p.rapidapi.com",
     });
     const options: RequestInit = {
@@ -32,8 +34,9 @@ export default function SearchBar() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="form-body" onSubmit={handleSubmit}>
       <TextField
+        className="form-text"
         label="Search for a city 🏙"
         value={location}
         onChange={handleChange}
